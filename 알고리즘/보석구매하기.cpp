@@ -1,3 +1,4 @@
+#if 0
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -15,7 +16,7 @@ public:
     int i ;
     int j ;
     Point(int i , int j) : i(i) , j(j){}
-
+    
 };
 vector<Point> points;
 class Label{
@@ -25,7 +26,7 @@ public:
     Label():value(0),idx(0){}
     Label(int v , int i) : value(v),idx(i){
     }
-
+    
 };
 bool isLager(const Label &l1 , const Label & l2){
     return l1.value <l2.value;
@@ -46,8 +47,8 @@ void init(){
 }
 
 void implFind(int i /* <-iter */, int j){
-
-
+    
+    
 }
 
 bool isBoudry(int i , int j , Point p){
@@ -62,8 +63,8 @@ void findPointInK(){
     int maxCount = 0;
     int count = 0;
     for(int i = 0 ; i < ilabel.size(); i ++ ){
-       
-        for(int j = 0 ; j <= jlabel.size() + k ; j ++ ){
+        
+        for(int j = 0 ; j <= jlabel.size()  ; j ++ ){
             count = 0;
             for(int p = 0; p<= points.size(); p++ ){
                 if(isBoudry(i,j,points[p])){
@@ -75,12 +76,12 @@ void findPointInK(){
                 maxCount = count;
             }
         }
-     
+        
     }
     cout << mp.j<<" " << mp.i+k <<endl;
     cout <<maxCount<<endl;
-
-
+    
+    
 }
 
 int main(){
@@ -88,3 +89,4 @@ int main(){
     init();
     findPointInK();
 }
+#endif
